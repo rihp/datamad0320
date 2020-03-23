@@ -8,3 +8,10 @@ para generar el conflicto es necesario crear un branch adicional
 
 
 Aqui hay cambios adicionales al documento
+Aqui hay cambios adicionales al documento
+Aqui hay cambios adicionales al documento
+Aqui hay cambios adicionales al documento
+Aqui hay cambios adicionales al documento
+Aqui hay cambios adicionales al documento
+Aqui hay cambios adicionales al documento
+Aqui hay cambios adicionales al documento
