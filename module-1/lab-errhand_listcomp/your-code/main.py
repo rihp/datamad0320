@@ -152,7 +152,6 @@ except Exception as e:
     print(type(e), e)
 
 
-
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
 # Check in provided resources the type of error you may use. 
@@ -237,12 +236,11 @@ def linux_interaction():
     print('Doing something.')
 
 linux_interaction()
-"""
 
 # Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
-
+"""
 #21.  Write a function that asks for an integer and prints the square of it. 
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
@@ -251,10 +249,16 @@ linux_interaction()
 def squared():
     while True:
         number = input('gimmi an integer:')
-            try:
-                int(number)
-            
-    print(number)
+        try:
+            #if number.isnumeric():
+            if isinstance(int(number), int) == True:
+                squared = int(number)**2
+                break
+            else:
+                print('Big mistake @@@ this should not happen.')
+        except Exception as e:
+            print(type(e), e)           
+    print(f'your number {number} when squared is equal to: {squared}')
 
 squared()
 
@@ -262,6 +266,11 @@ squared()
 
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
+
+numerators = [i for i in range(1,1001)]
+denominators = [i for i in range(1,10)]
+
+results = [result for result in numerators if ]
 
 
 
