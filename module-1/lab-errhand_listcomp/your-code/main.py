@@ -10,7 +10,7 @@ print(my_listComprehension)
 
 import math
 import os
-
+import random
 """
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -84,18 +84,33 @@ consonants = [e for e in tqbf if e not in 'aeiouAEIOU ']
 print(consonants)
 
 """
+
 #10. Find the folders you have in your madrid-oct-2018 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
-files = []
-print(os.listdir('/home/rh/pycode/datamad0320/'))
+path = '../../..'
+files = [e.name for e in os.scandir(path) if (e.is_dir() and not e.name.startswith('.'))]
+print(files)
+# @@@@@@@ TRATANDO DE HACER LISTA DE TODOS LOS SUBFOLDERS ENCONTRADOS.
+# subfiles = [e.name for e in os.scandir(path+(files))]
+# print(subfiles)
+    
+
+
+
 
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
 
+random_lists = [
+    [e for e in [i for i in random.sample(range(100), 10)]],
+    [e for e in [i for i in random.sample(range(100), 10)]],
+    [e for e in [i for i in random.sample(range(100), 10)]],
+    [e for e in [i for i in random.sample(range(100), 10)]]]
 
+print(random_lists)
 
 
 #12. Flatten the following list of lists. Use flatten_list as the name of the output.
