@@ -9,6 +9,7 @@ print(my_listComprehension)
 #Insert here the module/library import statements 
 
 import math
+import os
 
 """
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
@@ -55,7 +56,7 @@ print(odds)
 divisible_by_seven = [i for i in range(1,1001) if i%7==0]
 print(divi)
 
-"""
+
 
 #7. Remove all of the vowels in a string. Hint: make a list of the non-vowels. Use non_vowels as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -63,30 +64,32 @@ print(divi)
 
 teststring = 'Find all of the words in a string that are monosyllabic'
 
-non_vowels = [e for e in teststring if e not in ['a', 'e', 'i', 'o', 'u']]
+non_vowels = [e for e in teststring if e not in 'aeiouAEIOU']
 print(non_vowels)
 
-"""
+
 #8. Find the capital letters (and not white space) in the sentence 'The Quick Brown Fox Jumped Over The Lazy Dog'. 
 # Use capital_letters as the name of the list.  
 # Remember to use list comprehensions and to print your results
 
-
-
+tqbf = 'The Quick Brown Fox Jumped Over The Lazy Dog'
+capital_letters = [e for e in tqbf if e.isupper()]
+print(capital_letters)
 
 #9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
 # Use consonants as the name of the list.
 # Remember to use list comprehensions and to print your results.
 
+consonants = [e for e in tqbf if e not in 'aeiouAEIOU ']
+print(consonants)
 
-
-
-
+"""
 #10. Find the folders you have in your madrid-oct-2018 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
-
+files = []
+print(os.listdir('/home/rh/pycode/datamad0320/'))
 
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
@@ -114,7 +117,7 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
-
+"""
 for i in ['a','b','c']:
     print(i**2)
 
