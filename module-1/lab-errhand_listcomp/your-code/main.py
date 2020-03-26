@@ -1,19 +1,21 @@
+"""
 #Example: 
 
 eggs = (1,3,8,3,2)
-
-
 my_listComprehension = [1/egg for egg in eggs]
-
 print(my_listComprehension)
 
+"""
 #Insert here the module/library import statements 
 
+import math
 
-
-
+"""
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
+
+square = [i**2 for i in range(20)]
+print(square)
 
 
 
@@ -21,33 +23,39 @@ print(my_listComprehension)
 #2. Calculate the first 50 power of two. Use power_of_two as the name of the list.
 # Remember to use list comprehensions and to print your results
 
-
-
+power_of_two = [2**i for i in range(50)]
+print(power_of_two, len(power_of_two))
 
 #3. Calculate the square root of the first 100 numbers. Use sqrt as the name of the list.
 # You will probably need to install math library with pip and import it in this file.  
 # Remember to use list comprehensions and to print your results
 
 
+sqrt = [math.sqrt(i) for i in range(100)]
+print(sqrt)   
 
 
 #4. Create this list [-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0]. Use my_list as the name of the list.
 # Remember to use list comprehensions and to print your results
 
-
+my_list = [i for i in range(0,-11, -1)]
+print(my_list)
 
 
 #5. Find the odd numbers from 1-100. Use odds as the name of the list. 
 # Remember to use list comprehensions and to print your results
 
-
+odds = [i for i in range(1,100,1) if i % 2 == 1]
+print(odds)
 
 
 #6. Find all of the numbers from 1-1000 that are divisible by 7. Use divisible_by_seven as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+divisible_by_seven = [i for i in range(1,1001) if i%7==0]
+print(divi)
 
-
+"""
 
 #7. Remove all of the vowels in a string. Hint: make a list of the non-vowels. Use non_vowels as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -55,9 +63,10 @@ print(my_listComprehension)
 
 teststring = 'Find all of the words in a string that are monosyllabic'
 
+non_vowels = [e for e in teststring if e not in ['a', 'e', 'i', 'o', 'u']]
+print(non_vowels)
 
-
-
+"""
 #8. Find the capital letters (and not white space) in the sentence 'The Quick Brown Fox Jumped Over The Lazy Dog'. 
 # Use capital_letters as the name of the list.  
 # Remember to use list comprehensions and to print your results
@@ -107,7 +116,7 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 
 
 for i in ['a','b','c']:
-    print i**2
+    print(i**2)
 
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
@@ -149,8 +158,8 @@ f.write('Test write this')
 #Hint: the file could not exist and the data could not be convertable to int
 
 fp = open('myfile.txt')
-    line = f.readline()
-    i = int(s.strip())
+line = f.readline()
+i = int(s.strip())
 
 
 
@@ -190,3 +199,6 @@ Total_Marks = int(input("Enter Total Marks Scored: "))
 Num_of_Sections = int(input("Enter Num of Sections: "))
 
 
+
+
+"""
