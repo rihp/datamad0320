@@ -63,17 +63,22 @@ class War:
         self.saxonArmy.append(saxon)
     
     def vikingAttack(self):
-        sx = random.choice_(self.saxonArmy)
+        sx = random.choice(self.saxonArmy)
         vk = random.choice(self.vikingArmy)
         sx.receiveDamage(vk.strength)
         for soldier in self.saxonArmy:
-            if saxon.health < 0:
+            if soldier.health < 0:
                 self.saxonArmy.remove(soldier)
         
 
     def saxonAttack(self):
-        pass
-
+        sx = random.choice(self.saxonArmy)
+        vk = random.choice(self.vikingArmy)
+        vk.receiveDamage(sx.strength)
+        for soldier in self.vikingArmy:
+            if soldier.health < 0:
+                self.vikingArmy.remove(soldier)
+ 
     def showStatus(self):
         if len(self.saxonArmy) == 0:
             return "Vikings have won the war of the century!"
