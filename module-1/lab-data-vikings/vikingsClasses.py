@@ -67,8 +67,9 @@ class War:
         vk = random.choice(self.vikingArmy)
         sx.receiveDamage(vk.strength)
         for soldier in self.saxonArmy:
-            if soldier.health < 0:
+            if soldier.health <= 0:
                 self.saxonArmy.remove(soldier)
+                return 'A Saxon has died in combat'
         
 
     def saxonAttack(self):
@@ -76,13 +77,16 @@ class War:
         vk = random.choice(self.vikingArmy)
         vk.receiveDamage(sx.strength)
         for soldier in self.vikingArmy:
-            if soldier.health < 0:
+            if soldier.health <= 0:
                 self.vikingArmy.remove(soldier)
- 
+        return f'{vk.name} has received {sx.strength} points of damage'
+
     def showStatus(self):
-        if len(self.saxonArmy) == 0:
+        if (len(self.vikingArmy) > 0 and len(self.saxonArmy) == 0):
             return "Vikings have won the war of the century!"
-        elif len(self.vikingArmy) == 0:
+        elif (len(self.vikingArmy) == 0 and len(self.saxonArmy) > 0):
             return "Saxons have fought for their lives and survive another day..."
-        else:
+        elif (len(self.vikingArmy) > 0 and len(self.saxonArmy) > 0):
             return "Vikings and Saxons are still in the thick of battle."
+        else:
+            return "Wtf ???"
