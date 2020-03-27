@@ -17,15 +17,16 @@ class Viking(Soldier):
         super().__init__(health, strength)
         self.name = name
 
-    def attack(self):
-        super().attack()
+    def attack(self, strength):
+        super().attack(self.strength)
 
     def receiveDamage(self, damage):
-        super().receiveDamage()
+        super().receiveDamage(damage)
+        print(self.health)
         if self.health > 0:
-            return f"{name} has received {damage} points of damage"
+            return f"{self.name} has received {damage} points of damage"
         else:
-            return f"{name} has died in act of combat"
+            return f"{self.name} has died in act of combat"
 
 
     def battleCry(self):
