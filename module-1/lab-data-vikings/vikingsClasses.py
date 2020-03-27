@@ -5,11 +5,12 @@ class Soldier:
         self.health = health
         self.strength = strength
         
-    def attack():
-        pass
+    def attack(self):
+        return self.strength
 
-    def receiveDamage():
-        pass
+    def receiveDamage(self, damage):
+        self.health -= damage
+        
 
 
 
