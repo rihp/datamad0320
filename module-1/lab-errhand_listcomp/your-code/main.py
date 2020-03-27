@@ -240,7 +240,7 @@ linux_interaction()
 # Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
-"""
+
 #21.  Write a function that asks for an integer and prints the square of it. 
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
@@ -268,12 +268,16 @@ squared()
 # Use results as the name of the list 
 
 numerators = [i for i in range(1,1001)]
-denominators = [i for i in range(1,10)]
+denominators = [i for i in range(2,10)]
 
-results = [result for result in numerators if ]
+def div1k():
+    pass
 
+#results = [result for result in numerators if ]
 
+print(results)
 
+""" 
 
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
