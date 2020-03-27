@@ -17,8 +17,8 @@ class Viking(Soldier):
         super().__init__(health, strength)
         self.name = name
 
-    def attack(self, strength):
-        super().attack(self.strength)
+    def attack(self):
+        return super().attack()
 
     def receiveDamage(self, damage):
         super().receiveDamage(damage)
