@@ -1,67 +1,74 @@
 #1. Import the NUMPY package under the name np.
+import numpy as np
 
-
-
+"""
 #2. Print the NUMPY version and the configuration.
+print(np.version.version)
+# 1.18.2
 
-
-
+"""
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
-
-
+a = np.random.random((2,3,5))
 
 #4. Print a.
-
-
+print(a)
+print(a.shape)
 
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
-
-
+b = np.ones(((5,2,3)))
 
 #6. Print b.
-
-
+print(b)
+print(b.shape)
 
 #7. Do a and b have the same size? How do you prove that in Python code?
-
-
-
+print('Are arrays a and b the same shape?', a.shape == b.shape)
 
 #8. Are you able to add a and b? Why or why not?
-
-
+"""
+print( a+b )
+#Traceback (most recent call last):
+# File "main.py", line 39, in <module>
+#    print( a+b )
+#ValueError: operands could not be broadcast together with shapes (2,3,5) (5,2,3) 
+"""
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
-
-
+c = b.transpose(1,2,0)
+print(c)
+print(c.shape)
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
+d = a+c
+print(d)
 
 
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
-
-
-
+print(a)
+print(d)
+print('array `d` has the random value of `a` +1 on each value because we added `c`(an array of ones) to `d`')
 
 #12. Multiply a and c. Assign the result to e.
-
-
+e=a*c
+print(e)
 
 #13. Does e equal to a? Why or why not?
-
-
+print('`a` equals to `e` beacause we are multiplying everything by 1')
 
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
-
-
-
+d_max = d.max()
+d_min = d.min()
+d_mean = d.mean()
+print(d_max, d_min, d_mean)
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
-
+f= np.empty((2,3,5))
+print(f)
+print('Array `f` of uninitialized (arbitrary) data of the given shape, dtype, and order. Object arrays will be initialized to None.')
 
 
 
@@ -74,8 +81,22 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
+def quartiles(number):
+    if number <= d_min:
+        return 0
+    elif d_min < number < d_mean:
+        return 25
+    elif number == d_mean:
+        return 50
+    elif d_mean < number < d_max:
+        return 75
+    elif d_max <= number:
+        return 100
+    else:
+        return 'should never happen'
 
-
+vfunc = np.vectorize(quartiles)
+f = vfunc(d)
 
 
 """
@@ -98,7 +119,9 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 75.,  75.,  75.,  75.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 """
-
+print(d)
+print(d_min, d_mean, d_max)
+print(f)
 
 """
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
@@ -112,3 +135,20 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+def quartiles(number):
+    if number <= d_min:
+        return 'A'
+    elif d_min < number < d_mean:
+        return 'B'
+    elif number == d_mean:
+        return 'C'
+    elif d_mean < number < d_max:
+        return 'D'
+    elif d_max <= number:
+        return 'E'
+    else:
+        return 'should never happen'
+
+vfunc = np.vectorize(quartiles)
+f = vfunc(d)
+f
